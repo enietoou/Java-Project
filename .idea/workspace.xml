@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4abe624-c083-4052-9ab4-53e0b196923c" name="Changes" comment="Добавлены комментарии и откорректирован код">
-      <change afterPath="$PROJECT_DIR$/images/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/9.png" afterDir="false" />
+    <list default="true" id="c4abe624-c083-4052-9ab4-53e0b196923c" name="Changes" comment="Добавлен Readme и скриншоты">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
     </list>
@@ -166,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702996905711</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Добавлен Readme и скриншоты">
+      <option name="closed" value="true" />
+      <created>1702997657211</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1702997657211</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -176,7 +173,8 @@
     <MESSAGE value="Добавил фукнцию вывод результатов запроса. Решена 1 и 2 задача. График построен, среднее количество расходов выведено." />
     <MESSAGE value="Выполнены все 3 задачи!" />
     <MESSAGE value="Добавлены комментарии и откорректирован код" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлены комментарии и откорректирован код" />
+    <MESSAGE value="Добавлен Readme и скриншоты" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен Readme и скриншоты" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
