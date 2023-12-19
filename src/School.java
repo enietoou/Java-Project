@@ -63,7 +63,6 @@ public class School {
 
 
 
-
     public static List<School> parseCSV(Path path) {
         try (Stream<String> csvLines = Files.lines(path)) {
             return csvLines.skip(1)

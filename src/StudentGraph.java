@@ -5,22 +5,24 @@ import org.jfree.data.category.DefaultCategoryDataset;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import java.sql.SQLException;
 
+
 public class StudentGraph {
+
     public static void main() throws SQLException {
-        // Создаем набор данных для графика
+
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
-        // Заполняем данные о среднем количестве студентов в различных странах
+        // Заполнение данных о среднем количестве студентов в различных странах
         Map<String, Double> averageStudentsByCounty = getAverageStudentsByCounty();
+
         for (String county : averageStudentsByCounty.keySet()) {
             double averageStudents = averageStudentsByCounty.get(county);
             dataset.addValue(averageStudents, "Студенты", county);
         }
 
-        // Создаем график
+
         JFreeChart chart = ChartFactory.createBarChart(
                 "Среднее количество студентов в различных странах", // Заголовок графика
                 "Страна", // Название оси X
@@ -28,12 +30,14 @@ public class StudentGraph {
                 dataset // Набор данных для графика
         );
 
-        // Отображаем график в отдельном окне
+        // Отображание графика в отдельном окне
         ChartFrame frame = new ChartFrame("График студентов", chart);
         frame.pack();
         frame.setVisible(true);
     }
 
+
+    //Метод заполнения данных
     private static Map<String, Double> getAverageStudentsByCounty() throws SQLException {
         SqlLiteDB db = new SqlLiteDB();
         db.connect();
