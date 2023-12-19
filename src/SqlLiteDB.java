@@ -133,4 +133,10 @@ public class SqlLiteDB {
                 "UNION\n" +
                 "SELECT county AS 'Страна', AVG(expenditure) AS 'Ср. кол-во расходов'  FROM School WHERE county == 'Glenn' AND expenditure > 10";
     }
+
+    public String getQueryOfTopMathBetween() {
+        return "SELECT * FROM School WHERE students BETWEEN 5000 AND 7500 OR students BETWEEN 10000 AND 11000\n" +
+                "ORDER BY math DESC\n" +
+                "LIMIT 1";
+    }
 }

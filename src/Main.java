@@ -9,8 +9,13 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         SqlLiteDB db = new SqlLiteDB();
         db.connect();
-        ResultSet resset = db.executeQuery(db.getQueryOfAvgExpend());
+        ResultSet resset = db.executeQuery(db.getQueryOfTopMathBetween());
         db.printResultSet(resset);
+
+        //Вывод среднего количества расходов(expenditure) в Fresno, Contra Costa,
+        //El Dorado и Glenn, у которых расход больше 10:
+//        ResultSet resset = db.executeQuery(db.getQueryOfAvgExpend());
+//        db.printResultSet(resset);
         //запуск построения графика по среднему количеству студентов в различных странах
 //        StudentGraph.main();
 
