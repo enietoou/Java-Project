@@ -25,5 +25,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="java" level="project" />
+    <orderEntry type="library" name="jfree.jfreechart" level="project" />
   </component>
 </module>

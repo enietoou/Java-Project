@@ -1,6 +1,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
@@ -85,5 +86,51 @@ public class SqlLiteDB {
     public ResultSet executeQuery(String query) throws SQLException {
         Statement statement = connection.createStatement();
         return statement.executeQuery(query);
+    }
+
+    public void printResultSet(ResultSet resultSet) throws SQLException {
+        ResultSetMetaData metaData = resultSet.getMetaData();
+        int columnCount = metaData.getColumnCount();
+
+        // Вывод заголовков столбцов
+        for (int i = 1; i <= columnCount; i++) {
+            System.out.print(metaData.getColumnName(i) + "\t");
+        }
+        System.out.println();
+
+        // Вывод данных строк
+        while (resultSet.next()) {
+            for (int i = 1; i <= columnCount; i++) {
+                System.out.print(resultSet.getString(i) + "\t");
+            }
+            System.out.println();
+        }
+    }
+
+    public double getAverageStudents(String county) throws SQLException {
+        String query = "SELECT AVG(students) FROM School WHERE county = '" + county + "'";
+
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+
+        double averageStudents = 0.0;
+        if (resultSet.next()) {
+            averageStudents = resultSet.getDouble(1);
+        }
+
+        resultSet.close();
+        statement.close();
+
+        return averageStudents;
+    }
+
+    public String getQueryOfAvgExpend() {
+        return "SELECT county AS 'Страна', AVG(expenditure) AS 'Ср. кол-во расходов'  FROM School WHERE county == 'Fresno' AND expenditure > 10\n" +
+                "UNION\n" +
+                "SELECT county AS 'Страна', AVG(expenditure) AS 'Ср. кол-во расходов'  FROM School WHERE county == 'Contra Costa' AND expenditure > 10\n" +
+                "UNION\n" +
+                "SELECT county AS 'Страна', AVG(expenditure) AS 'Ср. кол-во расходов'  FROM School WHERE county == 'El Dorado' AND expenditure > 10\n" +
+                "UNION\n" +
+                "SELECT county AS 'Страна', AVG(expenditure) AS 'Ср. кол-во расходов'  FROM School WHERE county == 'Glenn' AND expenditure > 10";
     }
 }
