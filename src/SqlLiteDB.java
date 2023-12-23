@@ -54,7 +54,7 @@ public class SqlLiteDB {
 
 
 
-    public void insertData(List<School> schools) {
+    public void insertData(List<School> schools) throws SQLException {
         String insertDataQuery = "INSERT INTO School (id, district, name, county, grades, students, " +
                 "teachers, calworks, lunch, computer, expenditure, income, english, read, math) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
